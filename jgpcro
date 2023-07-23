@@ -1,6 +1,38 @@
 #!/usr/bin/python
+import sys
+
+def usage():
+    usage = """USAGE:
+    jgpcro activity_start   # Log start of activity
+    """
+    print(usage)
+    exit();
+
+def activity_start():
+    print("jgpcro: Ok, start logging start of activity")
+    print("jgpcro: Done logging start of activity")
+
+def activity_stop():
+    print("jgpcro: Ok, start logging end of activity")
+    print("jgpcro: Done logging end of activity")
+
+def activity(task):
+    if task == "start":
+        activity_start()
+    elif task == "stop":
+        activity_stop()
+    else:
+        usage()
 
 def main():
-    print("jgpcro: Hello")
+    if len(sys.argv) < 2:
+        usage()
+    elif sys.argv[1] == "activity_start":
+        activity("start")
+    elif sys.argv[1] == "activity_stop":
+        activity("stop")
+    else:
+        usage()
 
 main()
+
