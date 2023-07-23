@@ -4,6 +4,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import sys
+from lib.activity import activity
 
 def usage():
     usage = """USAGE:
@@ -11,22 +12,6 @@ def usage():
     """
     print(usage)
     exit();
-
-def activity_start():
-    print("jgpcro: Ok, start logging start of activity")
-    print("jgpcro: Done logging start of activity")
-
-def activity_stop():
-    print("jgpcro: Ok, start logging end of activity")
-    print("jgpcro: Done logging end of activity")
-
-def activity(task):
-    if task == "start":
-        activity_start()
-    elif task == "stop":
-        activity_stop()
-    else:
-        usage()
 
 def main():
     if len(sys.argv) < 2:
